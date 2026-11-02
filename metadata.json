@@ -1,0 +1,6 @@
+{
+  "name": "IRA Promoters | Architectural Land & Open Plots",
+  "description": "Rooted in Visakhapatnam. Curating clear-title open-plots, residential layouts, and enduring architectural land ready for generations legacy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
