@@ -135,8 +135,17 @@
       box-shadow: 0 12px 30px -10px rgba(0, 17, 38, 0.5) !important;
     }
     .nav-transparent {
-      background-color: transparent;
-      border-bottom-color: rgba(255, 255, 255, 0.12);
+      background: linear-gradient(180deg, rgba(0, 17, 38, 0.88) 0%, rgba(0, 17, 38, 0.55) 70%, rgba(0, 17, 38, 0.25) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom-color: rgba(255, 255, 255, 0.2);
+    }
+    /* Enforce full crisp opacity and superior legibility across all headings */
+    h1, h2, h3, h4, h5, h6 {
+      opacity: 1 !important;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
   </style>
 
@@ -203,7 +212,7 @@
   @keyframes chapterTitlePulse {
     0% {
       transform: translateY(6px);
-      opacity: 0.7;
+      opacity: 0.95;
     }
     100% {
       transform: translateY(0);
@@ -225,27 +234,27 @@
 <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out nav-transparent border-b" id="mainHeader">
 <div class="w-full px-4 sm:px-8 md:px-16 flex items-center justify-between h-18 sm:h-20 md:h-22 max-w-[1600px] mx-auto">
 <!-- LEFT: Official IRA Logo & Brand Wordmark -->
-<a class="flex items-center gap-3 sm:gap-3.5 group shrink-0 min-h-[44px]" href="#hero">
-<img alt="IRA Promoters Official Seal" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/images/logo.png"/>
-<div class="flex flex-col border-l border-white/20 pl-2.5 sm:pl-3.5">
-<span class="font-headline-md text-xs sm:text-base md:text-lg tracking-wider text-surface font-normal whitespace-nowrap">IRA PROMOTERS</span>
-<span class="font-body-md text-surface/75 text-[8px] sm:text-[10px] md:text-[11px] tracking-wide italic whitespace-nowrap hidden min-[360px]:inline-block">Happiness in every nook &amp; corner</span>
+<a class="flex items-center gap-3 sm:gap-3.5 group shrink-0 min-h-[44px] opacity-100 transition-opacity hover:opacity-95" href="#hero">
+<img alt="IRA Promoters Official Seal" class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105 brightness-110 drop-shadow-md opacity-100" src="assets/images/logo.png"/>
+<div class="flex flex-col border-l border-white/40 pl-2.5 sm:pl-3.5">
+<span class="font-headline-md text-xs sm:text-base md:text-lg tracking-wider text-white font-medium whitespace-nowrap opacity-100 drop-shadow-sm">IRA PROMOTERS</span>
+<span class="font-body-md text-[#ecbf83] text-[8px] sm:text-[10px] md:text-[11px] tracking-wide italic whitespace-nowrap hidden min-[360px]:inline-block opacity-100 font-medium drop-shadow-sm">Happiness in every nook &amp; corner</span>
 </div>
 </a>
 <!-- CENTER: Ultra-Refined Minimal Architectural Hamburger Toggle -->
 <div class="flex items-center justify-center">
-<button aria-label="Open Navigation Overlay" class="flex items-center gap-3 px-3.5 py-2.5 min-h-[44px] min-w-[44px] group focus:outline-none" id="menuOpenBtn" type="button">
-<span class="hidden sm:inline-block font-label-caps text-[11px] tracking-[0.22em] text-surface/85 group-hover:text-[#ecbf83] transition-colors uppercase">MENU</span>
+<button aria-label="Open Navigation Overlay" class="flex items-center gap-3 px-3.5 py-2.5 min-h-[44px] min-w-[44px] group focus:outline-none cursor-pointer" id="menuOpenBtn" type="button">
+<span class="hidden sm:inline-block font-label-caps text-[11px] tracking-[0.22em] text-white group-hover:text-[#ecbf83] transition-colors uppercase font-medium opacity-100">MENU</span>
 <div class="flex flex-col justify-center gap-[5px] w-6 h-5">
-<span class="w-6 h-[1.5px] bg-[#A9824C] transition-all duration-300 group-hover:w-6 group-hover:bg-[#ecbf83]"></span>
-<span class="w-4 h-[1.5px] bg-[#A9824C] self-end transition-all duration-300 group-hover:w-6 group-hover:bg-[#ecbf83]"></span>
-<span class="w-5 h-[1.5px] bg-[#A9824C] transition-all duration-300 group-hover:w-6 group-hover:bg-[#ecbf83]"></span>
+<span class="w-6 h-[2px] bg-[#ecbf83] transition-all duration-300 group-hover:w-6 group-hover:bg-white"></span>
+<span class="w-4 h-[2px] bg-[#ecbf83] self-end transition-all duration-300 group-hover:w-6 group-hover:bg-white"></span>
+<span class="w-5 h-[2px] bg-[#ecbf83] transition-all duration-300 group-hover:w-6 group-hover:bg-white"></span>
 </div>
 </button>
 </div>
 <!-- RIGHT: Refined Gold-Bordered Explore CTA Button -->
 <div class="flex items-center justify-end shrink-0">
-<a class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 min-h-[44px] text-surface font-label-caps text-[10px] sm:text-[11px] tracking-[0.18em] uppercase border border-[#A9824C] hover:border-[#ecbf83] hover:text-[#ecbf83] hover:bg-white/5 transition-all duration-300 shadow-sm" href="#projects">
+<a class="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-2.5 min-h-[44px] text-white font-label-caps text-[10px] sm:text-[11px] tracking-[0.18em] uppercase border border-[#ecbf83] bg-[#001126]/40 backdrop-blur-sm hover:border-white hover:text-[#ecbf83] hover:bg-white/10 transition-all duration-300 shadow-sm rounded-lg font-medium opacity-100" href="#projects">
 <span class="hidden sm:inline">Explore Projects</span>
 <span class="sm:hidden">Projects</span>
 </a>
@@ -265,7 +274,7 @@
 <span class="text-[10px] tracking-widest text-[#ecbf83] italic">Happiness in every nook &amp; corner</span>
 </div>
 </div>
-<button aria-label="Close Navigation Overlay" class="flex items-center gap-2.5 px-4 py-2 min-h-[44px] min-w-[44px] border border-surface/25 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] transition-all duration-300 group focus:outline-none" id="menuCloseBtn" type="button">
+<button aria-label="Close Navigation Overlay" class="flex items-center gap-2.5 px-4 py-2 min-h-[44px] min-w-[44px] border border-surface/25 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] transition-all duration-300 group focus:outline-none rounded-lg cursor-pointer" id="menuCloseBtn" type="button">
 <span class="font-label-caps text-[10px] tracking-widest uppercase">CLOSE</span>
 <span class="material-symbols-outlined text-[18px] group-hover:rotate-90 transition-transform duration-300">close</span>
 </button>
@@ -317,7 +326,7 @@
 </div>
 <!-- Coordinates & Direct Concierge at bottom of Left Column -->
 <div class="pt-4 border-t border-surface/15 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs text-surface-container-high/90 font-light">
-<a class="inline-flex items-center gap-2 px-4 py-2 bg-[#A9824C] hover:bg-[#8e6b3b] text-primary text-xs font-label-caps tracking-wider transition-colors min-h-[44px]" href="https://wa.me/919573960563" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-[#0A5C36] hover:bg-[#064426] text-white text-xs font-label-caps tracking-wider border border-[#0d7343] rounded-lg transition-colors min-h-[44px] font-medium shadow-md" href="https://wa.me/919573960563" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-[16px]">chat</span>
           WhatsApp: +91 95739 60563
         </a>
@@ -375,18 +384,18 @@
 <span class="w-8 h-[1px] bg-secondary-fixed"></span>
 <span class="font-label-caps tracking-widest text-xs uppercase">Boutique Property Development &amp; Land Assets</span>
 </div>
-<h1 class="font-display-lg text-display-lg md:text-[84px] md:leading-[92px] text-surface font-normal">
+<h1 class="font-display-lg text-display-lg md:text-[84px] md:leading-[92px] text-white font-medium opacity-100 drop-shadow-md">
             Happiness in every <br/>
-<span class="font-display-lg italic text-secondary-fixed-dim font-light">nook &amp; corner</span>
+<span class="font-display-lg italic text-[#f4cb96] font-normal opacity-100">nook &amp; corner</span>
 </h1>
-<p class="font-body-lg text-body-lg text-surface-container-high/90 max-w-2xl font-light leading-relaxed">
+<p class="font-body-lg text-body-lg text-surface-container-high/95 max-w-2xl font-light leading-relaxed opacity-100">
             Crafting legally verified land opportunities, Vaastu-compliant residential layouts, and deliberate community spaces with uncompromised integrity across the expanding Visakhapatnam growth corridors.
           </p>
 <div class="pt-4 flex flex-wrap items-center gap-4 sm:gap-6">
-<a class="px-8 py-4 bg-primary-container text-surface font-label-caps tracking-widest uppercase border border-secondary/40 hover:bg-primary hover:border-secondary transition-all duration-300" href="#projects">
+<a class="px-8 py-4 bg-primary-container text-surface font-label-caps tracking-widest uppercase border border-secondary/40 hover:bg-primary hover:border-secondary transition-all duration-300 rounded-lg shadow-md hover:shadow-lg font-medium" href="#projects">
               Explore Projects
             </a>
-<a class="px-8 py-4 bg-surface/10 backdrop-blur-md text-surface hover:text-secondary-fixed font-label-caps tracking-widest uppercase border border-surface/30 hover:border-surface transition-all duration-300 inline-flex items-center gap-2" href="https://wa.me/919573960563" rel="noopener noreferrer" target="_blank">
+<a class="px-8 py-4 bg-[#0A5C36] hover:bg-[#064426] text-white font-label-caps tracking-widest uppercase border border-[#0d7343] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2 font-medium" href="https://wa.me/919573960563" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-[18px]">chat</span>
               WhatsApp Us
             </a>
@@ -413,7 +422,7 @@
 <div class="flex items-center gap-3 text-secondary-fixed-dim">
 <span class="font-label-caps text-label-caps tracking-widest uppercase">Chapter 01 — Philosophy</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg md:text-[52px] md:leading-[60px] text-surface font-normal">
+<h2 class="font-headline-lg text-headline-lg md:text-[52px] md:leading-[60px] text-white font-medium opacity-100">
               A grounded approach to community living and legally verified land opportunities.
             </h2>
 <div class="space-y-6 text-on-primary-container text-body-lg font-light leading-relaxed max-w-2xl">
@@ -466,7 +475,7 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-outline-variant/40 gap-6">
       <div>
         <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 04 — On-Ground Progress</span>
-        <h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-normal">
+        <h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-medium opacity-100">
           Gallery &amp; Site Updates
         </h2>
       </div>
@@ -500,7 +509,7 @@
             <span class="material-symbols-outlined text-[28px] text-[#ecbf83]">videocam</span>
           </div>
           <span class="font-label-caps text-[10px] text-secondary-fixed-dim uppercase tracking-widest block">Project Videos &amp; Drone Feeds</span>
-          <h3 class="font-headline-md text-xl font-normal text-surface">Aerial Layout Survey &amp; Site Walkthroughs</h3>
+          <h3 class="font-headline-md text-xl font-medium text-white opacity-100">Aerial Layout Survey &amp; Site Walkthroughs</h3>
           <p class="text-xs text-on-primary-container leading-relaxed font-light">
             High-definition drone updates and curated ground footage documenting layout elevation and boundary progress are recorded periodically.
           </p>
@@ -548,7 +557,7 @@
             Our advisory team coordinates site visits directly from the PM Palem office with full document folders and layout maps.
           </p>
         </div>
-        <button onclick="scheduleSiteVisit()" class="w-full py-3 px-4 bg-primary hover:bg-primary-container text-surface text-xs font-label-caps tracking-widest uppercase transition-colors flex items-center justify-center gap-2 border border-secondary/30">
+        <button onclick="scheduleSiteVisit()" class="w-full py-3 px-4 bg-primary hover:bg-primary-container text-surface text-xs font-label-caps tracking-widest uppercase transition-colors flex items-center justify-center gap-2 border border-secondary/30 rounded-lg shadow-sm font-medium cursor-pointer">
           <span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">directions_car</span>
           Arrange Site Visit
         </button>
@@ -565,7 +574,7 @@
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 pb-8 border-b border-outline-variant/40 gap-6">
 <div>
 <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 02 — Portfolio Spectrum</span>
-<h2 class="font-display-lg text-headline-lg md:text-[56px] text-primary font-normal">
+<h2 class="font-display-lg text-headline-lg md:text-[56px] text-primary font-medium opacity-100">
               What We Do
             </h2>
 </div>
@@ -670,7 +679,7 @@
 <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-outline-variant/30 gap-6">
 <div>
 <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 03 — Curation</span>
-<h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-normal">
+<h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-medium opacity-100">
               Featured Ventures
             </h2>
 </div>
@@ -685,7 +694,7 @@
 <div class="flex items-center justify-between mb-8">
 <div class="flex items-center gap-3">
 <span class="w-2.5 h-2.5 bg-secondary rounded-full animate-pulse"></span>
-<h3 class="font-headline-md text-headline-md text-primary font-normal">Ongoing Projects</h3>
+<h3 class="font-headline-md text-headline-md text-primary font-medium opacity-100">Ongoing Projects</h3>
 </div>
 <span class="font-label-caps text-xs tracking-widest text-on-surface-variant">ACTIVE DEVELOPMENTS</span>
 </div>
@@ -709,7 +718,7 @@
                 </p>
 <div class="pt-6 border-t border-outline-variant/20 flex items-center justify-between text-xs font-label-caps tracking-widest text-primary">
 <span>SPECIFICATIONS &amp; PRICING UPON REQUEST</span>
-<button onclick="openProjectModal('north-gate')" class="inline-flex items-center gap-1.5 text-secondary hover:text-primary font-label-caps text-xs tracking-wider uppercase transition-colors cursor-pointer">
+<button onclick="openProjectModal('north-gate')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-secondary/40 hover:border-secondary bg-surface hover:bg-surface-container text-secondary hover:text-primary font-label-caps text-xs tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-xs">
   <span>View Project Details</span>
   <span class="material-symbols-outlined text-[16px]">open_in_new</span>
 </button>
@@ -735,7 +744,7 @@
                 </p>
 <div class="pt-6 border-t border-outline-variant/20 flex items-center justify-between text-xs font-label-caps tracking-widest text-primary">
 <span>CLEAR TITLE GUARANTEED</span>
-<button onclick="openProjectModal('hillcrest')" class="inline-flex items-center gap-1.5 text-secondary hover:text-primary font-label-caps text-xs tracking-wider uppercase transition-colors cursor-pointer">
+<button onclick="openProjectModal('hillcrest')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-secondary/40 hover:border-secondary bg-surface hover:bg-surface-container text-secondary hover:text-primary font-label-caps text-xs tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-xs">
   <span>View Project Details</span>
   <span class="material-symbols-outlined text-[16px]">open_in_new</span>
 </button>
@@ -749,7 +758,7 @@
 <div class="flex items-center justify-between mb-8">
 <div class="flex items-center gap-3">
 <span class="w-2.5 h-2.5 bg-outline rounded-full"></span>
-<h3 class="font-headline-md text-headline-md text-primary font-normal">Completed Projects</h3>
+<h3 class="font-headline-md text-headline-md text-primary font-medium opacity-100">Completed Projects</h3>
 </div>
 <span class="font-label-caps text-xs tracking-widest text-on-surface-variant">DELIVERED MILESTONES</span>
 </div>
@@ -768,7 +777,7 @@
 <p class="text-xs text-on-surface-variant mb-4">Residential plotted development delivered with 100% boundary fencing and tar roads.</p>
 <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between">
   <span class="font-label-caps text-[10px] text-secondary tracking-widest uppercase">Verified Completion</span>
-  <button onclick="openProjectModal('palm-grove')" class="text-xs font-label-caps text-primary hover:text-secondary uppercase tracking-wider flex items-center gap-1">Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+  <button onclick="openProjectModal('palm-grove')" class="text-xs font-label-caps text-primary hover:text-secondary uppercase tracking-wider flex items-center gap-1 px-2.5 py-1 rounded-md border border-outline-variant/40 hover:border-secondary transition-colors cursor-pointer">Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
 </div>
 </div>
 </div>
@@ -786,7 +795,7 @@
 <p class="text-xs text-on-surface-variant mb-4">Gated layout delivered with integrated drainage, electrical transformers, and registry handover.</p>
 <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between">
   <span class="font-label-caps text-[10px] text-secondary tracking-widest uppercase">Verified Milestone</span>
-  <button onclick="openProjectModal('sovereign-park')" class="text-xs font-label-caps text-primary hover:text-secondary uppercase tracking-wider flex items-center gap-1 cursor-pointer">Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+  <button onclick="openProjectModal('sovereign-park')" class="text-xs font-label-caps text-primary hover:text-secondary uppercase tracking-wider flex items-center gap-1 px-2.5 py-1 rounded-md border border-outline-variant/40 hover:border-secondary transition-colors cursor-pointer">Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
 </div>
 </div>
 </div>
@@ -804,7 +813,7 @@
 <p class="text-xs text-on-surface-variant mb-4">Exclusive low-density apartment residence delivered with rainwater harvesting and power backup.</p>
 <div class="pt-4 border-t border-outline-variant/20 flex items-center justify-between">
   <span class="font-label-caps text-[10px] text-secondary tracking-widest uppercase">Occupancy Complete</span>
-  <button onclick="openProjectModal('ananda-nilayam')" class="text-xs font-label-caps text-primary hover:text-secondary uppercase tracking-wider flex items-center gap-1 cursor-pointer">Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
+  <button onclick="openProjectModal('ananda-nilayam')" class="text-xs font-label-caps text-primary hover:text-secondary uppercase tracking-wider flex items-center gap-1 px-2.5 py-1 rounded-md border border-outline-variant/40 hover:border-secondary transition-colors cursor-pointer">Details <span class="material-symbols-outlined text-[14px]">arrow_forward</span></button>
 </div>
 </div>
 </div>
@@ -820,7 +829,7 @@
 <!-- Chapter Header -->
 <div class="max-w-3xl mb-20">
 <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 04 — Leadership</span>
-<h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-normal mb-6">
+<h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-medium opacity-100 mb-6">
             Founders &amp; Leadership
           </h2>
 <p class="text-body-lg text-on-surface-variant font-light leading-relaxed">
@@ -911,7 +920,7 @@
 <div class="max-w-[1600px] mx-auto px-4 sm:px-8 md:px-16">
 <div class="max-w-3xl mb-16">
 <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 05 — The Institutional Standard</span>
-<h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-normal">
+<h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-medium opacity-100">
             Trust &amp; Transparency
           </h2>
 <p class="text-xs text-on-surface-variant tracking-wider uppercase mt-2">
@@ -965,7 +974,7 @@
     <!-- Chapter Header -->
     <div class="max-w-3xl mb-16">
       <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 06 — Buyer Guidance</span>
-      <h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-normal mb-4">
+      <h2 class="font-display-lg text-headline-lg md:text-[52px] text-primary font-medium opacity-100 mb-4">
         Buyer Guide &amp; Useful FAQs
       </h2>
       <p class="text-body-lg text-on-surface-variant font-light leading-relaxed">
@@ -1032,7 +1041,7 @@
 <div class="lg:col-span-5 space-y-10">
 <div>
 <span class="text-secondary font-label-caps text-label-caps tracking-widest uppercase block mb-3">Chapter 06 — Engagement</span>
-<h2 class="font-display-lg text-headline-lg md:text-[50px] text-primary font-normal mb-6">
+<h2 class="font-display-lg text-headline-lg md:text-[50px] text-primary font-medium opacity-100 mb-6">
                 Visakhapatnam Headquarters
               </h2>
 <p class="text-body-md text-on-surface-variant font-light leading-relaxed">
@@ -1082,15 +1091,15 @@
 
 <!-- Quick Action Direct CTAs -->
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-  <a class="flex items-center justify-center gap-2 py-3 px-4 bg-primary hover:bg-primary-container text-surface text-xs font-label-caps tracking-widest uppercase border border-secondary/40 transition-colors" href="tel:9573960563">
+  <a class="flex items-center justify-center gap-2 py-3 px-4 bg-primary hover:bg-primary-container text-surface text-xs font-label-caps tracking-widest uppercase border border-secondary/40 transition-colors rounded-lg shadow-sm font-medium" href="tel:9573960563">
     <span class="material-symbols-outlined text-[16px] text-secondary-fixed-dim">call</span>
     Call Now
   </a>
-  <a class="flex items-center justify-center gap-2 py-3 px-4 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-label-caps tracking-widest uppercase transition-colors" href="https://wa.me/919573960563" target="_blank" rel="noopener noreferrer">
+  <a class="flex items-center justify-center gap-2 py-3 px-4 bg-[#0A5C36] hover:bg-[#064426] text-white text-xs font-label-caps tracking-widest uppercase border border-[#0d7343] rounded-lg shadow-md transition-colors font-medium" href="https://wa.me/919573960563" target="_blank" rel="noopener noreferrer">
     <span class="material-symbols-outlined text-[16px]">chat</span>
     WhatsApp Us
   </a>
-  <button onclick="scheduleSiteVisit()" class="sm:col-span-2 flex items-center justify-center gap-2 py-3 px-4 bg-surface hover:bg-surface-container border border-secondary text-primary text-xs font-label-caps tracking-widest uppercase transition-colors cursor-pointer">
+  <button onclick="scheduleSiteVisit()" class="sm:col-span-2 flex items-center justify-center gap-2 py-3 px-4 bg-surface hover:bg-surface-container border border-secondary text-primary text-xs font-label-caps tracking-widest uppercase transition-colors cursor-pointer rounded-lg shadow-sm font-medium">
     <span class="material-symbols-outlined text-[16px] text-secondary">calendar_month</span>
     Schedule a Site Visit
   </button>
@@ -1135,7 +1144,7 @@
       <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span>
       <span class="font-label-caps text-xs tracking-widest text-secondary uppercase block">Priority Architectural Desk</span>
     </div>
-    <h3 class="font-headline-md text-2xl sm:text-3xl text-primary font-normal">Initiate an Architectural &amp; Plot Enquiry</h3>
+    <h3 class="font-headline-md text-2xl sm:text-3xl text-primary font-medium opacity-100">Initiate an Architectural &amp; Plot Enquiry</h3>
     <p class="text-xs sm:text-sm text-on-surface-variant mt-2 leading-relaxed">
       Direct desk routing to IRA Promoters development leadership. Complete your requirements below to receive verified layout sheets, pricing schedules, or to book an in-person advisory session.
     </p>
@@ -1209,10 +1218,10 @@
 
     <!-- Row 5: Action Buttons -->
     <div class="pt-3 space-y-3">
-      <button class="w-full py-4 sm:py-5 px-8 bg-primary hover:bg-primary-container text-surface font-label-caps text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 border border-secondary/40 shadow-sm flex items-center justify-center gap-3 cursor-pointer group" type="submit">
-        <span class="material-symbols-outlined text-[20px] text-[#25D366] group-hover:scale-110 transition-transform">chat</span>
+      <button class="w-full py-4 sm:py-5 px-8 bg-[#0A5C36] hover:bg-[#064426] text-white font-label-caps text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 border border-[#0d7343] shadow-lg rounded-lg flex items-center justify-center gap-3 cursor-pointer group font-medium" type="submit">
+        <span class="material-symbols-outlined text-[20px] text-white group-hover:scale-110 transition-transform">chat</span>
         <span>Send Enquiry on WhatsApp</span>
-        <span class="material-symbols-outlined text-[16px] text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        <span class="material-symbols-outlined text-[16px] text-white/80 group-hover:translate-x-1 transition-transform">arrow_forward</span>
       </button>
 
       <div class="flex items-center justify-center gap-4 text-xs text-on-surface-variant">
@@ -1391,7 +1400,7 @@
 </div>
 <!-- Social Channels & Community -->
 <div class="pt-2">
-  <a class="inline-flex items-center gap-2 px-3.5 py-2 border border-[#A9824C]/60 hover:border-[#ecbf83] text-xs font-label-caps text-[#ecbf83] hover:text-surface transition-all tracking-wider min-h-[44px]" href="https://www.instagram.com/irapromoters/" rel="noopener noreferrer" target="_blank">
+  <a class="inline-flex items-center gap-2 px-3.5 py-2 border border-[#A9824C]/60 hover:border-[#ecbf83] text-xs font-label-caps text-[#ecbf83] hover:text-surface transition-all tracking-wider min-h-[44px] rounded-lg" href="https://www.instagram.com/irapromoters/" rel="noopener noreferrer" target="_blank">
     <span class="material-symbols-outlined text-[16px]">photo_camera</span>
     <span>Instagram: @irapromoters</span>
   </a>
@@ -1449,7 +1458,7 @@
         <span class="text-[10px] font-label-caps text-[#ecbf83] uppercase tracking-widest block">Data Governance &amp; Regulatory Disclosures</span>
         <h3 id="privacyModalTitle" class="font-headline-md text-xl sm:text-2xl font-normal text-surface">Privacy Policy &amp; Statutory Terms</h3>
       </div>
-      <button onclick="closePrivacyModal()" class="w-10 h-10 border border-surface/20 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] flex items-center justify-center transition-colors cursor-pointer" aria-label="Close modal">
+      <button onclick="closePrivacyModal()" class="w-10 h-10 border border-surface/20 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] flex items-center justify-center transition-colors cursor-pointer rounded-lg" aria-label="Close modal">
         <span class="material-symbols-outlined text-[20px]">close</span>
       </button>
     </div>
@@ -1499,7 +1508,7 @@
     <!-- Footer -->
     <div class="p-4 sm:p-6 bg-surface-container border-t border-outline-variant/30 flex items-center justify-between gap-4 shrink-0">
       <span class="text-[11px] text-on-surface-variant italic">Official Governance Document • Visakhapatnam, AP</span>
-      <button onclick="closePrivacyModal()" class="px-6 py-2.5 bg-primary hover:bg-primary-container text-surface text-xs font-label-caps tracking-widest uppercase transition-colors border border-secondary/30 cursor-pointer">
+      <button onclick="closePrivacyModal()" class="px-6 py-2.5 bg-primary hover:bg-primary-container text-surface text-xs font-label-caps tracking-widest uppercase transition-colors border border-secondary/30 cursor-pointer rounded-lg font-medium shadow-sm">
         Understood &amp; Close
       </button>
     </div>
@@ -1517,7 +1526,7 @@
         <span class="text-[10px] font-label-caps text-[#ecbf83] uppercase tracking-widest block">Complimentary Guided Inspection</span>
         <h3 id="siteVisitModalTitle" class="font-headline-md text-xl sm:text-2xl font-normal text-surface">Schedule a Guided Site Visit</h3>
       </div>
-      <button onclick="closeSiteVisitModal()" class="w-10 h-10 border border-surface/20 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] flex items-center justify-center transition-colors cursor-pointer" aria-label="Close modal">
+      <button onclick="closeSiteVisitModal()" class="w-10 h-10 border border-surface/20 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] flex items-center justify-center transition-colors cursor-pointer rounded-lg" aria-label="Close modal">
         <span class="material-symbols-outlined text-[20px]">close</span>
       </button>
     </div>
@@ -1596,10 +1605,10 @@
       </div>
 
       <div class="pt-2 flex items-center justify-end gap-3 border-t border-outline-variant/20">
-        <button type="button" onclick="closeSiteVisitModal()" class="px-5 py-2.5 border border-outline text-primary text-xs font-label-caps tracking-widest uppercase hover:bg-surface-container transition-colors cursor-pointer">
+        <button type="button" onclick="closeSiteVisitModal()" class="px-5 py-2.5 border border-outline text-primary text-xs font-label-caps tracking-widest uppercase hover:bg-surface-container transition-colors cursor-pointer rounded-lg">
           Cancel
         </button>
-        <button type="submit" class="px-6 py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-label-caps tracking-widest uppercase transition-colors flex items-center gap-2 cursor-pointer shadow-sm">
+        <button type="submit" class="px-6 py-2.5 bg-[#0A5C36] hover:bg-[#064426] text-white text-xs font-label-caps tracking-widest uppercase border border-[#0d7343] transition-colors flex items-center gap-2 cursor-pointer shadow-md rounded-lg font-medium">
           <span class="material-symbols-outlined text-[18px]">chat</span>
           <span>Confirm on WhatsApp</span>
         </button>
@@ -1619,7 +1628,7 @@
         <span id="modalCategory" class="text-[10px] font-label-caps text-[#ecbf83] uppercase tracking-widest block">Ongoing Development</span>
         <h3 id="modalTitle" class="font-headline-md text-xl sm:text-2xl font-normal text-surface">Project Details</h3>
       </div>
-      <button onclick="closeProjectModal()" class="w-10 h-10 border border-surface/20 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] flex items-center justify-center transition-colors cursor-pointer" aria-label="Close modal">
+      <button onclick="closeProjectModal()" class="w-10 h-10 border border-surface/20 hover:border-[#ecbf83] text-surface hover:text-[#ecbf83] flex items-center justify-center transition-colors cursor-pointer rounded-lg" aria-label="Close modal">
         <span class="material-symbols-outlined text-[20px]">close</span>
       </button>
     </div>
@@ -1673,10 +1682,10 @@
         <span>Schedule Site Tour</span>
       </button>
       <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
-        <button onclick="closeProjectModal()" class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 border border-outline text-primary text-xs font-label-caps tracking-widest uppercase hover:bg-surface transition-colors min-h-[44px] cursor-pointer">
+        <button onclick="closeProjectModal()" class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 border border-outline text-primary text-xs font-label-caps tracking-widest uppercase hover:bg-surface transition-colors min-h-[44px] cursor-pointer rounded-lg">
           Close
         </button>
-        <button id="modalWhatsAppBtn" class="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-label-caps tracking-widest uppercase transition-colors flex items-center justify-center gap-2 min-h-[44px] cursor-pointer">
+        <button id="modalWhatsAppBtn" class="flex-1 sm:flex-none px-4 sm:px-6 py-2.5 bg-[#0A5C36] hover:bg-[#064426] text-white text-xs font-label-caps tracking-widest uppercase border border-[#0d7343] transition-colors flex items-center justify-center gap-2 min-h-[44px] cursor-pointer rounded-lg font-medium shadow-md">
           <span class="material-symbols-outlined text-[16px]">chat</span>
           <span>WhatsApp Enquiry</span>
         </button>
